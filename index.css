@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 5%;
+  background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0,8,51,0.9)),url(blue-smoke-5cnt31ab8k8xvrhl.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar{
+  width: 100%;
+  max-width: 700px;
+  background-color: rgb(255, 255, 255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+::placeholder{
+  color: #cac7ff;
+}
+.search-input{
+  background:transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 20px 20px;
+  font-size: 20px;
+  color: #cac7ff;
+}
+.search-button{
+  background: transparent;
+  border: 0;
+  border-radius:50%;
+  width: 60px;
+  height: 60px;
+}

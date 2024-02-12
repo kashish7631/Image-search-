@@ -1,5 +1,4 @@
 document.getElementById("btn").addEventListener("click", getImages);
-
 const article = document.querySelector("article");
 
 async function sendHttpRequest(method, url, data) {
@@ -8,29 +7,27 @@ async function sendHttpRequest(method, url, data) {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Client-ID"
+      Authorization: "Client-ID GlxGxboGXijJhZZKPi-A76KH5XUkD1d3XHCwfGOmbKc",
     },
   })
-  
-  .then((response) => {
-    if (response.status >= 200 && response.status < 300) {
-        return.response.json();
+    .then((response) => {
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
       } else {
         return response.json().then((errData) => {
           console.log(errData);
-          throw new Error("Something Went Wrong - Khurpi Side");
+          throw new Error("Something went wrong - server side.");
         });
       }
-  })
-  .catch((error) => {
+    })
+    .catch((error) => {
       console.log(error);
-      throw new Error("Something Went Wrong - Khurpi Side");
+      throw new Error("Something went wrong!");
     });
 }
 
-
-var input = document.getelementById("searchField");
-input.addEventListener("keyup", function(event) {
+var input = document.getElementById("searchField");
+input.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     getImages();
@@ -38,28 +35,27 @@ input.addEventListener("keyup", function(event) {
 });
 
 function func() {
-  console.log("It Works");
+  console.log("it werks");
+  document.getElementById("slike").setAttribute("attribute_on_click");
+}
+//request s autorizacijskim parametrom: "https://api.unsplash.com/search/photos?query=dogs&cliend_id=GlxGxboGXijJhZZKPi-A76KH5XUkD1d3XHCwfGOmbKc"
+async function getImages() {
+  try {
+    const userInput = document.getElementById("searchField").value;
+    console.log(userInput);
 
-  document.getelementById("slike").setAttribute("attribute_on_click");
-  async function getImages() {
-    try {
-      const userInput = document.getElementById("searchField").value;
-      console.log(userInput);
+    const method = "GET";
+    const url = `https://api.unsplash.com/search/photos?query=${userInput}`;
+    const responseData = await sendHttpRequest(method, url);
 
-      const method = "GET";
-      const url = "https://api.unsplash.com/search/photos?query=${userInput}";
-      const responseData = await sendHttpRequest(method, url);
+    responseData.results.forEach((res) => {
+      const method = "afterend";
+      const url = `<div class="images" onclick="func()"><img  class="slike" src="${res.urls.small}"/></div>`;
+      article.insertAdjacentHTML(method, url);
+    });
 
-      responseData.results.forEach((res) => {
-        const method = "afterend";
-        const url = `<div class="image" onclick="func()"><img class="slike" src="${res.urls.small}"/></div>`;
-        article.insertAdjacentHTML(method, url);
-      });
-
-      return responseData;
-    } catch (error) {
-      alert(error.message);
-    }
-    }
+    return responseData;
+  } catch (error) {
+    alert(error.message);
   }
 }

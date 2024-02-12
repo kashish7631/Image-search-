@@ -1,0 +1,30 @@
+.w-input {
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-height: 1.4285em;
+  padding: 25px;
+  color: rgb(66, 66, 66);
+}
+
+.center {
+  margin: auto;
+  display: block;
+}
+
+#btn {
+  display: none;
+}
+
+#searchField {
+  width: 99%;
+  height: 30px;
+}
+
+#ImageList {
+  min-height: 1px;
+  background-color: whitesmoke;
+  margin-top: 10px;
+}

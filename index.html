@@ -1,20 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>create api</title>
-  <link href="index.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-</head>
-<body>
-  <div class="container">
-    <form action="https://www.google.com/search" class="search-bar">
-      <input class="search-input" type="text" placeholder="Search Anything" name="q">
-      <button  class="search-button" type="submit"><span class="material-symbols-outlined">
-        search
-        </span></button>
-    </form>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search - Khurpi</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="w-center">
+      <section class="InputSection">
+        <div class="w-input">
+          <div class="inputTitle">Khurpi Image Search</div>
+          <div class="inputButton">
+            <button id="btn"></button>
+          </div>
+          <div class="inputField">
+            <input
+              type="text"
+              name="search"
+              id="searchField"
+              placeholder="Search Khurpi Images"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="ImageList">
+        <article class="center"></article>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

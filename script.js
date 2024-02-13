@@ -1,6 +1,12 @@
 document.getElementById("btn").addEventListener("click", getImages);
 const article = document.querySelector("article");
 
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+}
+
+document.getElementById("toggleTheme").addEventListener("click", toggleTheme);
+
 async function sendHttpRequest(method, url, data) {
   return fetch(url, {
     method: method,

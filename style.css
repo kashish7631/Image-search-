@@ -2,6 +2,15 @@
   width: 75%;
 }
 
+.inputTitle {
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: rgb(66, 66, 66);
+  display: block;
+  text-align: center;
+}
+
 .inputWrapper {
   border: lightgray;
   border-style: solid;
